@@ -1,0 +1,23 @@
+Description: remove rdoctask
+Author: HIGUCHI Daisuke (VDR dai) <dai@debian.org>
+Last-Update: 2017-11-15
+
+Index: ruby-formatador/Rakefile
+===================================================================
+--- ruby-formatador.orig/Rakefile
++++ ruby-formatador/Rakefile
+@@ -56,14 +56,6 @@ task :coverage do
+   sh "open coverage/index.html"
+ end
+ 
+-require 'rake/rdoctask'
+-Rake::RDocTask.new do |rdoc|
+-  rdoc.rdoc_dir = 'rdoc'
+-  rdoc.title = "#{name} #{version}"
+-  rdoc.rdoc_files.include('README*')
+-  rdoc.rdoc_files.include('lib/**/*.rb')
+-end
+-
+ desc "Open an irb session preloaded with this library"
+ task :console do
+   sh "irb -rubygems -r ./lib/#{name}.rb"
